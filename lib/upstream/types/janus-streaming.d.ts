@@ -1,0 +1,3 @@
+interface StreamingPluginHandle {}
+
+interface StreamingMessage {}
