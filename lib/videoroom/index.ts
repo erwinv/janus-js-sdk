@@ -28,8 +28,8 @@ import {
 
 export default class JanusVideoroom {
   opaqueId: string
-  publisherId: string = ''
-  privateId: string = ''
+  publisherId = ''
+  privateId = ''
 
   addedPublishers: EventStream<Publisher[]> = never()
   removedPublishers: EventStream<Publisher['id']> = never()

@@ -63,8 +63,8 @@ type VideoroomRequest =
 type VideoroomRequestName = VideoroomRequest['request']
 
 interface BaseMessage {
-  leaving?: {}
-  unpublished?: {}
+  leaving?: unknown
+  unpublished?: unknown
   error?: unknown
   error_code?: number
   audio_codec?: AudioCodec
