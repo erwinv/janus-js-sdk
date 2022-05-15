@@ -1,6 +1,6 @@
 import { IAdapter } from 'webrtc-adapter'
-import { StreamingMessage, StreamingPluginHandle } from './janus-streaming'
-import { VideoroomMessage, VideoroomPluginHandle } from './janus-videoroom'
+// import { StreamingMessage, StreamingPluginHandle } from './janus-streaming'
+// import { VideoroomMessage, VideoroomPluginHandle } from './videoroom'
 
 type ErrorCallback<E = unknown> = (err: E) => void
 type SuccessCallback<T> = (val: T) => void
@@ -70,10 +70,10 @@ export default class Janus {
     dependencies: Partial<DependenciesOverrides>
   ): Dependencies
   static isWebrtcSupported(): boolean
-  static debug(...data: any[]): void
-  static log(...data: any[]): void
-  static warn(...data: any[]): void
-  static error(...data: any[]): void
+  static debug(...data: any[]): void // eslint-disable-line @typescript-eslint/no-explicit-any
+  static log(...data: any[]): void // eslint-disable-line @typescript-eslint/no-explicit-any
+  static warn(...data: any[]): void // eslint-disable-line @typescript-eslint/no-explicit-any
+  static error(...data: any[]): void // eslint-disable-line @typescript-eslint/no-explicit-any
   static randomString(length: number): string
   static attachMediaStream(element: HTMLMediaElement, stream: MediaStream): void
   static reattachMediaStream(to: HTMLMediaElement, from: HTMLMediaElement): void

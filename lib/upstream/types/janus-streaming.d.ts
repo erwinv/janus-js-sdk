@@ -1,4 +1,4 @@
-import { PluginHandle } from './janus-core'
+import { PluginHandle } from './core'
 
 interface StreamingMessage {}
 
