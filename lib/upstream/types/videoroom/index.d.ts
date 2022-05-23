@@ -10,42 +10,47 @@ export interface BaseMessage {
 }
 
 type IStream = {
-  type: 'audio' | 'video' | 'data' | ''
+  type: 'audio' | 'video' | 'data'
   mindex: number
   mid: StreamId
   // feed_id
-  disabled?: boolean
 
   description?: string
   moderated?: boolean
 }
 
-interface DisabledStream extends IStream {
-  disabled: true
-  description: undefined
-  moderated: undefined
-}
-
-interface AudioStream extends IStream {
+export interface AudioStream extends IStream {
   type: 'audio'
   codec: 'none' | AudioCodec
   talking?: boolean
 }
 
-interface VideoStream extends IStream {
+export interface VideoStream extends IStream {
   type: 'video'
   codec: 'none' | VideoCodec
   simulcast?: boolean
   svc?: boolean
 }
 
-type Stream = DisabledStream | AudioStream | VideoStream
+export interface DataStream extends IStream {
+  type: 'data'
+}
 
-interface Publisher {
+export type Stream = AudioStream | VideoStream | DataStream
+
+export interface DisabledStream extends Stream {
+  disabled: true
+  description: undefined
+  moderated: undefined
+}
+
+export interface Publisher {
   id: string
   display: string
   streams: Stream[]
 }
+
+export type Attendee = Pick<Publisher, 'id' | 'display'>
 
 interface VideoroomEventMessage extends BaseMessage {
   videoroom: 'event'

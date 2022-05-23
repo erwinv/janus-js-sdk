@@ -5,8 +5,8 @@ import { IAdapter } from 'webrtc-adapter'
 type ErrorCallback<E = unknown> = (err: E) => void
 type SuccessCallback<T> = (val: T) => void
 
-type AudioCodec = 'opus'
-type VideoCodec = 'vp8' | 'vp9' | 'h264' | 'h265' | 'av1'
+export type AudioCodec = 'opus'
+export type VideoCodec = 'vp8' | 'vp9' | 'h264' | 'h265' | 'av1'
 
 type DebugLevel = 'error' | 'warn' | 'log' | 'debug' | 'trace'
 
